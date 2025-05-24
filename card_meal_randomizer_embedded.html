@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Meal Randomizer</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; text-align: center; }
+        .card { background: white; padding: 20px; margin: 20px auto; width: 300px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Card Meal Randomizer</h1>
+    <div class="card" id="mealCard">
+        <h2>Click below to draw a card!</h2>
+    </div>
+    <button onclick="drawCard()">Draw Card</button>
+
+    <script>
+        const meals = [
+            { Card: "6 of Clubs", Meal: "Chicken Caesar salad (no croutons)" },
+            { Card: "7 of Spades", Meal: "Zucchini noodles with pesto and grilled shrimp" },
+            { Card: "5 of Hearts", Meal: "Greek salad with grilled lamb and feta" },
+            { Card: "7 of Hearts", Meal: "Broccoli and cheddar egg muffins" },
+            { Card: "10 of Spades", Meal: "Cauliflower rice stir-fry with chicken" },
+            { Card: "2 of Clubs", Meal: "Stuffed bell peppers (turkey & veg)" },
+            { Card: "J of Diamonds", Meal: "Spinach salad with warm bacon vinaigrette" },
+            { Card: "J of Hearts", Meal: "Mushroom and zucchini frittata" },
+            { Card: "K of Hearts", Meal: "Eggplant lasagna (no noodles)" },
+            { Card: "2 of Diamonds", Meal: "Seared scallops on sautéed kale" },
+            { Card: "A of Clubs", Meal: "Roasted veggie tray with sausage" },
+            { Card: "A of Diamonds", Meal: "Caprese salad with grilled chicken" },
+            { Card: "A of Spades", Meal: "Chopped salad with turkey, avocado, and ranch" },
+            { Card: "4 of Spades", Meal: "Ribeye steak with garlic butter" },
+            { Card: "6 of Hearts", Meal: "Bacon-wrapped chicken thighs" },
+            { Card: "A of Hearts", Meal: "Bunless bacon cheeseburger" },
+            { Card: "2 of Spades", Meal: "Sausage and cabbage skillet" },
+            { Card: "K of Diamonds", Meal: "Carnivore pizza (cheese/meat crust)" },
+            { Card: "4 of Hearts", Meal: "Chicken thighs with creamy spinach" },
+            { Card: "4 of Clubs", Meal: "Pulled pork lettuce wraps" },
+            { Card: "9 of Clubs", Meal: "Shrimp and avocado lettuce boats" },
+            { Card: "Q of Diamonds", Meal: "Turkey meatballs in low-carb sauce" },
+            { Card: "8 of Diamonds", Meal: "Pepperoni egg cups" },
+            { Card: "9 of Hearts", Meal: "Pan-seared salmon and roasted asparagus" },
+            { Card: "3 of Hearts", Meal: "Buffalo wings with blue cheese dip" },
+            { Card: "9 of Spades", Meal: "Beef fajita bowl (no tortilla)" },
+            { Card: "Q of Clubs", Meal: "Omelet with spinach, cheese, and bacon" },
+            { Card: "2 of Hearts", Meal: "Keto avocado egg salad on greens" },
+            { Card: "5 of Spades", Meal: "Keto BLT lettuce wraps" },
+            { Card: "7 of Clubs", Meal: "Chaffle sandwich (cheese/egg waffle)" },
+            { Card: "7 of Diamonds", Meal: "Turkey and cheese roll-ups" },
+            { Card: "5 of Diamonds", Meal: "Keto chili (no beans)" },
+            { Card: "8 of Hearts", Meal: "Tuna-stuffed avocado" },
+            { Card: "6 of Spades", Meal: "Egg roll in a bowl" },
+            { Card: "Q of Spades", Meal: "Scrambled eggs with sautéed peppers" },
+            { Card: "3 of Diamonds", Meal: "Chicken salad in bell pepper boats" },
+            { Card: "3 of Spades", Meal: "Philly cheesesteak skillet" },
+            { Card: "3 of Clubs", Meal: "Grilled bratwurst with sautéed onions and kraut" },
+            { Card: "10 of Hearts", Meal: "Spaghetti squash with meat sauce" },
+            { Card: "9 of Diamonds", Meal: "Pasta primavera (zucchini, tomato, and penne)" },
+            { Card: "10 of Diamonds", Meal: "Chicken stir-fry with rice" },
+            { Card: "4 of Diamonds", Meal: "Sweet potato & black bean tacos" },
+            { Card: "J of Clubs", Meal: "Spaghetti with meat sauce" },
+            { Card: "Q of Hearts", Meal: "Chicken and veggie curry with naan" },
+            { Card: "10 of Clubs", Meal: "Tuna pasta salad" },
+            { Card: "K of Clubs", Meal: "Pita with falafel, cucumber, and yogurt" },
+            { Card: "5 of Clubs", Meal: "Shrimp tacos with slaw and corn tortilla" },
+            { Card: "6 of Diamonds", Meal: "Roasted veggie and quinoa bowl" },
+            { Card: "8 of Clubs", Meal: "Shepherd’s pie with mashed potatoes" },
+            { Card: "8 of Spades", Meal: "Burrito bowl with rice and beans" },
+            { Card: "K of Spades", Meal: "Sloppy joes on brioche buns" },
+            { Card: "J of Spades", Meal: "Grilled cheese and tomato soup" },
+
+        ];
+
+        function drawCard() {
+            const randomIndex = Math.floor(Math.random() * meals.length);
+            const card = meals[randomIndex];
+            document.getElementById('mealCard').innerHTML = `
+                <h2>${card.Card}</h2>
+                <p>${card.Meal}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
